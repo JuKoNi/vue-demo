@@ -1,15 +1,17 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
-defineProps({
-  msg: String,
-})
+interface HelloWorldProps {
+  msg: string
+}
+
+defineProps<HelloWorldProps>()
 
 const count = ref(0)
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <h1>{{ msg +" " + msg}}</h1>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
